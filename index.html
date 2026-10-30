@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Batalha Frutífera</title>
+<meta name="theme-color" content="#050816">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="menu" class="screen on">
+  <h1>🍉 Batalha Frutífera</h1>
+  <p class="sub">▸ duelo de lâminas neon ◂</p>
+  <button id="bLocal">Modo Local</button>
+  <button id="bOnline">Modo Online</button>
+</div>
+
+<div id="local" class="screen">
+  <h2>Modo Local</h2>
+  <button id="l1">1 Jogador (vs Bot)</button>
+  <button id="l2">2 Jogadores</button>
+  <button id="l3">3 Jogadores</button>
+  <button id="l4">4 Jogadores</button>
+  <button class="ghost" data-go="menu">Voltar</button>
+</div>
+
+<div id="online" class="screen">
+  <h2>Modo Online</h2>
+  <button id="bCreate">Criar sala</button>
+  <input id="code" maxlength="4" placeholder="CÓDIGO" autocomplete="off" autocapitalize="characters" spellcheck="false">
+  <button id="bJoin">Entrar na sala</button>
+  <p id="onMsg"></p>
+  <button class="ghost" data-go="menu">Voltar</button>
+</div>
+
+<div id="lobby" class="screen">
+  <h2>Sala</h2>
+  <div id="roomCode">----</div>
+  <p id="lobMsg">Aguardando outro jogador...</p>
+  <p class="tip">Funciona entre aparelhos diferentes: celular, tablet e computador.</p>
+  <button id="bCopy">Convidar amigo (link)</button>
+  <button id="bSolo">Jogar sozinho (vs Bot)</button>
+  <button class="ghost" id="bLeave">Sair</button>
+</div>
+
+<div id="stage">
+  <canvas id="cv" width="540" height="1170"></canvas>
+  <div id="pad"></div>
+  <button id="bExit">✕</button>
+  <div id="ping"></div><div id="big"></div>
+  <div id="hint">Corte as frutas!<br>Bolas falsas travam seu botão</div>
+  <div id="over"><h2 id="winner"></h2><button id="bAgain">Jogar novamente</button><button class="ghost" id="bQuit">Menu</button></div>
+</div>
+
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script>window.Peer||document.write('<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"><\/script>')</script>
+<script src="script.js"></script>
+</body>
+</html>
